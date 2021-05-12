@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  {% block title %}
+  <title>Tayara.</title>
+  {% endblock %}
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  {% block stylesheets %}
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <!-- Favicons -->
+  <link href="{{asset('frontend/img/favicon.png')}}" rel="icon">
+  <link href="{{asset('frontend/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <!-- Vendor CSS Files -->
+  <link href="{{asset('frontend/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="{{asset('frontend/vendor/icofont/icofont.min.css')}}" rel="stylesheet">
+  <link href="{{asset('frontend/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
+  <link href="{{asset('frontend/vendor/owl.carousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
+  <link href="{{asset('frontend/vendor/venobox/venobox.css')}}" rel="stylesheet">
+  <link href="{{asset('frontend/vendor/remixicon/remixicon.css')}}" rel="stylesheet">
+  <link href="{{asset('frontend/vendor/aos/aos.css')}}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{{asset('frontend/css/style.css')}}" rel="stylesheet">
+  {% endblock %}
+
+  {% block custom_stylesheets %}{% endblock %}
+
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container">
+
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav class="navbar navbar-expand-lg navbar-light  p-2">
+        <h1 class="logo pr-5"><a href="{{path('article_index')}}">Tayara<span>.</span></a></h1>
+
+        <ul class="navbar-nav mr-auto">
+          <li class=" nav-item pr-3"><a href="{{path('article_index')}}">Home</a></li>
+          <!-- <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#team">Team</a></li> -->
+
+
+
+          <li class=" nav-item ml-3"><a href="{{path('article_new')}}">Créer Une Annonce</a>
+
+            <!--
+            <ul>
+              <li><a href="/immobilier/new">Immobilier</a></li>
+
+              <li class="drop-down drop"><a href="#">Vehicules</a>
+
+                <ul>
+                  <li><a href="#">1</a></li>
+                  <li><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li><a href="#">4</a></li>
+                </ul>
+
+              </li>
+              <li><a href="#">Pour la Maison et Jardin</a></li>
+              <li><a href="#">Loisirs et divertissement</a></li>
+              <li><a href="#">Informatique et Multimedia</a></li>
+              <li><a href="#">Emploi et services</a></li>
+              <li><a href="#">Habillement et Bien Etre</a></li>
+              <li><a href="#">Entreprises</a></li>
+              <li><a href="#">Autres</a></li>            
+              </ul>
+
+              -->
+          </li>
+          <!--          
+            <li><a href="#contact">Contact</a></li>
+          -->
+
+        </ul>
+
+      </nav><!-- .nav-menu -->
+    </div>
+
+  </header><!-- End Header -->
+
+
+  <div class="container-fluid cont">
+    <div class="row">
+      <div class="col-lg-2 pl-0 ">
+        <div class="bg-light border-right sidebar2 " id="sidebar-wrapper">
+          <div class="sidebar-heading head pb-4 text-center font-weight-bold">
+            <h4>Toutes les catégories</h4>
+          </div>
+          <div class="list-group list-group-flush">
+            <a href="{{path('immobilier_index')}}" class="list-group-item list-group-item-action bg-light"><i
+                class="fa fa-home" aria-hidden="true"></i> <span class="p-1">Immobilier</span> </a>
+            <a href="{{path('vehicule_index')}}" class="list-group-item list-group-item-action bg-light"><i
+                class="fa fa-car" aria-hidden="true"></i> <span class="p-1">Vehicules</span> </a>
+            <a href="{{path('maisonjardin_index')}}" class="list-group-item list-group-item-action bg-light"><i
+                class="fas fa-tree"></i> <span class="p-1">Pour la Maison et Jardin</span></a>
+            <a href="{{path('loisirdivertissement_index')}}" class="list-group-item list-group-item-action bg-light"><i
+                class="fa fa-bicycle" aria-hidden="true"></i> <span class="p-1">Loisirs et Divertissement</span></a>
+            <a href="{{path('informatiquemultimedia_index')}}"
+              class="list-group-item list-group-item-action bg-light"><i class="fa fa-laptop" aria-hidden="true"></i>
+              <span class="p-1">Informatique et Multimedia</span></a>
+            <a href="{{path('emploiservice_index')}}" class="list-group-item list-group-item-action bg-light"><i
+                class="fa fa-briefcase" aria-hidden="true"></i> <span class="p-1">Emploi et services</span></a>
+            <a href="{{path('habillement_index')}}" class="list-group-item list-group-item-action bg-light"><i
+                class="fa fa-tshirt" aria-hidden="true"></i> <span class="p-1">Habillement et Bien Etre</span></a>
+            <a href="{{path('entreprise_index')}}" class="list-group-item list-group-item-action bg-light"><i
+                class="fa fa-paint-roller" aria-hidden="true"></i> <span class="p-1">Entreprises</span></a>
+            <a href="{{path('autre_index')}}" class="list-group-item list-group-item-action bg-light"><i
+                class="fa fa-ellipsis-h" aria-hidden="true"></i> <span class="p-1">Autres</span></a>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-lg-10 cont">
+
+        {% block body %} {% endblock %}
+
+      </div>
+    </div>
+  </div>
+
+
+  {% block footer %}
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+              <h3>Gp<span>.</span></h3>
+              <p>
+                A108 Adam Street <br>
+                NY 535022, USA<br><br>
+                <strong>Phone:</strong> +1 5589 55488 55<br>
+                <strong>Email:</strong> info@example.com<br>
+              </p>
+              <div class="social-links mt-3">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Our Newsletter</h4>
+            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Gp</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-template/ -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+  <a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
+  {% endblock %}
+
+
+
+
+  {% block javascript %}
+  <!-- Vendor JS Files -->
+  <script src="{{asset('frontend/vendor/jquery/jquery.min.js')}}"></script>
+  <script src="{{asset('frontend/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{asset('frontend/vendor/jquery.easing/jquery.easing.min.js')}}"></script>
+  <script src="{{asset('frontend/vendor/php-email-form/validate.js')}}"></script>
+  <script src="{{asset('frontend/vendor/owl.carousel/owl.carousel.min.js')}}"></script>
+  <script src="{{asset('frontend/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
+  <script src="{{asset('frontend/vendor/venobox/venobox.min.js')}}"></script>
+  <script src="{{asset('frontend/vendor/waypoints/jquery.waypoints.min.js')}}"></script>
+  <script src="{{asset('frontend/vendor/counterup/counterup.min.js')}}"></script>
+  <script src="{{asset('frontend/vendor/aos/aos.js')}}"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Template Main JS File -->
+  {% endblock %}
+  {% block custom_javascript %}{% endblock %}
+
+</body>
+
+</html>

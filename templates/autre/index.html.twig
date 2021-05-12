@@ -1,0 +1,39 @@
+{% extends 'template.html.twig' %}
+
+{% block title %}Autre {% endblock %}
+
+{% block body %}
+<br>
+<br>
+<br>
+<h1>Autres</h1>
+
+
+<div class="d-flex flex-wrap justify-content-md-center">
+    {% for autre in autres %}
+    <div class="px-3">
+        <a href="{{ path('article_show', {'id': autre.id}) }}">
+            <img src="{{asset('uploads/')}}{{ autre.image }}" class="rounded" alt="" style="width: 200px; height:200px">
+
+            <ul class="list-unstyled text-left">
+                <li class="text-truncate text-dark font-weight-bold"> {{ autre.prix }} DT </li>
+                <li class="text-truncate text-dark font-weight-bold"> {{ autre.titre }} </li>
+                {#<li> {{ article.description }} </li>
+                <li> {{ article.DateAt ? article.DateAt|date('Y-m-d H:i:s') : '' }} </li>
+                <li> {{ article.Localisation }} </li>#}
+            </ul>
+
+            {# <a href="{{ path('article_show', {'id': article.id}) }}" class="btn btn-primary">show</a>
+            <a href="{{ path('article_edit', {'id': article.id}) }}" class="btn btn-primary">edit</a>#}
+    </div>
+    {% else %}
+
+    <td colspan="8">no records found</td>
+
+    {% endfor %}
+</div>
+</tbody>
+</table>
+
+
+{% endblock %}

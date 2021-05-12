@@ -1,0 +1,40 @@
+{% extends 'template.html.twig' %}
+
+{% block title %}Liste des Annonces {% endblock %}
+
+{% block body %}
+<br>
+<br>
+<br>
+<h1>Loisir et Divertissement</h1>
+
+
+<div class="d-flex flex-wrap justify-content-md-center">
+    {% for loisir in loisirs %}
+    <div class="px-3">
+        <a href="{{ path('article_show', {'id': loisir.id}) }}">
+            <img src="{{asset('uploads/')}}{{ loisir.image }}" class="rounded" alt=""
+                style="width: 200px; height:200px">
+
+            <ul class="list-unstyled text-left">
+                <li class="text-truncate text-dark font-weight-bold"> {{ loisir.prix }} DT </li>
+                <li class="text-truncate text-dark font-weight-bold"> {{ loisir.titre }} </li>
+                {#<li> {{ article.description }} </li>
+                <li> {{ article.DateAt ? article.DateAt|date('Y-m-d H:i:s') : '' }} </li>
+                <li> {{ article.Localisation }} </li>#}
+            </ul>
+
+            {# <a href="{{ path('article_show', {'id': article.id}) }}" class="btn btn-primary">show</a>
+            <a href="{{ path('article_edit', {'id': article.id}) }}" class="btn btn-primary">edit</a>#}
+    </div>
+    {% else %}
+
+    <td colspan="8">no records found</td>
+
+    {% endfor %}
+</div>
+</tbody>
+</table>
+
+
+{% endblock %}
