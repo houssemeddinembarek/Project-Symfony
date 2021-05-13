@@ -55,7 +55,7 @@
         <h1 class="logo pr-5"><a href="{{path('article_index')}}">Tayara<span>.</span></a></h1>
 
         <ul class="navbar-nav mr-auto">
-          <li class=" nav-item pr-3"><a href="{{path('article_index')}}">Home</a></li>
+          <li class="nav-item pr-3"><a href="{{path('article_index')}}">Home</a></li>
           <!-- <li><a href="#about">About</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
@@ -63,7 +63,7 @@
 
 
 
-          <li class=" nav-item ml-3"><a href="{{path('article_new')}}">Créer Une Annonce</a>
+          <li class="nav-item ml-3"><a href="{{path('article_new')}}">Créer Une Annonce</a>
 
             <!--
             <ul>
@@ -87,13 +87,22 @@
               <li><a href="#">Entreprises</a></li>
               <li><a href="#">Autres</a></li>            
               </ul>
-
               -->
           </li>
           <!--          
             <li><a href="#contact">Contact</a></li>
           -->
+          <li class="nav-item bb "><a href="{{path('security_inscription')}}">Inscription</a> </li>
 
+          {% if not app.user %}
+          <li class="nav-item ml-4 ">
+            <a href="{{path('security_login')}}">Connection</a>
+          </li>
+          {% else %}
+          <li class="nav-item ml-4 ">
+            <a href="{{path('app_logout')}}">Deconnection</a>
+          </li>
+          {% endif %}
         </ul>
 
       </nav><!-- .nav-menu -->
@@ -106,8 +115,8 @@
     <div class="row">
       <div class="col-lg-2 pl-0 ">
         <div class="bg-light border-right sidebar2 " id="sidebar-wrapper">
-          <div class="sidebar-heading head pb-4 text-center font-weight-bold">
-            <h4>Toutes les catégories</h4>
+          <div class="sidebar-heading head pb-1 text-center font-weight-bold">
+            <h5>Toutes les catégories</h5>
           </div>
           <div class="list-group list-group-flush">
             <a href="{{path('immobilier_index')}}" class="list-group-item list-group-item-action bg-light"><i
@@ -151,7 +160,7 @@
 
           <div class="col-lg-3 col-md-6">
             <div class="footer-info">
-              <h3>Gp<span>.</span></h3>
+              <h3>Tayara<span>.</span></h3>
               <p>
                 A108 Adam Street <br>
                 NY 535022, USA<br><br>
@@ -205,14 +214,14 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>Gp</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>Tayara</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        Designed by <a href="https://tayaramade.com/">TayaraMade</a>
       </div>
     </div>
   </footer><!-- End Footer -->

@@ -1652,10 +1652,17 @@ section {
 }
 
 .sidebar2{
-    height: 800px;
+    height: 700px;
 }
 
 .head{
-    padding-top: 90px;
+    padding-top: 80px;
 }
 
+.bb{
+    margin-left: 450px;
+}
+
+.image{
+    background-image: url("https://media.geeksforgeeks.org/wp-content/uploads/Screen-Shot-2017-11-13-at-10.23.39-AM.png");
+}
